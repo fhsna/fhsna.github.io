@@ -1,5 +1,5 @@
 ---
-title: "South Baltimore Neighborhoods"
+title: "Association Map"
 layout: embed
 permalink: /embeds/map/
 ---
