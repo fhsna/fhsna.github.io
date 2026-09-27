@@ -1,7 +1,11 @@
 ---
 layout: base
 ---
-<main id="main-content" class="page-content" tabindex="-1">
-    {{ content }}
-</main>
-{% include footer.html %}
+<a class="skip-link" href="#main-content">Skip to main content</a>
+{% include sidebar.html %}
+<div class="site-body">
+    <main id="main-content" class="page-content" tabindex="-1">
+        {{ content }}
+    </main>
+    {% include footer.html %}
+</div>

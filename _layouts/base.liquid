@@ -9,15 +9,11 @@ layout: compress
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
     <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    {% include sidebar.html %}
-    <div class="site-body">
-        {{ content }}
-    </div>
+    {{ content }}
   </body>
 </html>

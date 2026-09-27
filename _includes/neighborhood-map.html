@@ -1,0 +1,23 @@
+<div class="neighborhood-map-scroll" tabindex="0" aria-label="South Baltimore neighborhood map; scroll horizontally on small screens">
+  <svg width="936" height="724" preserveAspectRatio="none" class="neighborhood-map" xmlns="http://www.w3.org/2000/svg" viewBox="46.1671875 23.548972189 881.8875 681.978234583" role="group" aria-labelledby="neighborhood-map-title neighborhood-map-description">
+    <title id="neighborhood-map-title">South Baltimore neighborhood associations</title>
+    <desc id="neighborhood-map-description">Select one of six outlined neighborhoods to visit its community association website.</desc>
+    <image href="{{ '/assets/maps/south-baltimore.jpg' | relative_url }}" x="46.1671875" y="23.548972189" width="881.8875" height="681.978234583" preserveAspectRatio="none" aria-hidden="true"/>
+    {% assign south_region = site.data.neighborhoods | where: 'id', 'federal-hill-south' %}
+    {% assign map_regions = site.data.neighborhoods | where_exp: 'region', 'region.id != "federal-hill-south"' | concat: south_region %}
+    {% for neighborhood in map_regions %}
+    <a class="neighborhood-region" href="{{ neighborhood.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ neighborhood.name | escape }}: {{ neighborhood.association | escape }}" tabindex="0">
+      <title>{{ neighborhood.association | escape }}</title>
+      <path class="neighborhood-region-shape" d="{{ neighborhood.path }}"/>
+      <g class="neighborhood-map-label" transform="translate({{ neighborhood.label_x }}, {{ neighborhood.label_y }})" aria-hidden="true">
+        <rect x="{{ neighborhood.label_width | divided_by: -2.0 }}" y="{{ neighborhood.label_height | divided_by: -2.0 }}" width="{{ neighborhood.label_width }}" height="{{ neighborhood.label_height }}" rx="6"/>
+        <text text-anchor="middle" dominant-baseline="central">
+          {% for line in neighborhood.label_lines %}
+          <tspan x="0" y="{% if neighborhood.label_lines.size == 1 %}0{% elsif forloop.first %}-11{% else %}11{% endif %}">{{ line | escape }}</tspan>
+          {% endfor %}
+        </text>
+      </g>
+    </a>
+    {% endfor %}
+  </svg>
+</div>

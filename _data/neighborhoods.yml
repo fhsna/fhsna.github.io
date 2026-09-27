@@ -1,0 +1,95 @@
+[
+  {
+    "id": "federal-hill",
+    "name": "Federal Hill",
+    "association": "Federal Hill Neighborhood Association",
+    "url": "https://www.federalhillbaltimore.org/",
+    "path": "M225,130 L458,122 L460,170 L466,227 L319,247 L232,258 L228,180 L225,130 Z",
+    "label_x": 331.65,
+    "label_y": 183.53,
+    "label_lines": [
+      "Federal Hill"
+    ],
+    "label_width": 142,
+    "label_height": 34,
+    "boundary_note": "Simplified to the supplied neighborhood reference map and requested street limits; all areas stop at the north side of I-95. Not an official service boundary. Key Highway is excluded."
+  },
+  {
+    "id": "federal-hill-south",
+    "name": "Federal Hill South",
+    "association": "Federal Hill South Neighborhood Association",
+    "url": "https://www.federalhillsouth.org/",
+    "path": "M319,247 L466,227 L471,307 L468,339 L474,393 L336,400 L328,330 L319,247 Z",
+    "label_x": 398.8,
+    "label_y": 313.4,
+    "label_lines": [
+      "Federal Hill",
+      "South"
+    ],
+    "label_width": 126,
+    "label_height": 54,
+    "boundary_note": "Simplified to the supplied neighborhood reference map and requested street limits; all areas stop at the north side of I-95. Not an official service boundary."
+  },
+  {
+    "id": "south-baltimore",
+    "name": "South Baltimore",
+    "association": "South Baltimore Neighborhood Association",
+    "url": "https://www.mysobo.org/",
+    "path": "M205,263 L232,258 L319,247 L328,330 L336,400 L343,459 L331,550 L330,590 L249,586 L244.4,515.9 L207.4,517.5 L205,500 L198,406 L191,332 L205,263 Z",
+    "label_x": 269.09,
+    "label_y": 416.81,
+    "label_lines": [
+      "South",
+      "Baltimore"
+    ],
+    "label_width": 126,
+    "label_height": 54,
+    "boundary_note": "Simplified to the supplied neighborhood reference map and requested street limits; all areas stop at the north side of I-95. Not an official service boundary. Excludes the corner south of West Barney Street and west of South Hanover Street."
+  },
+  {
+    "id": "riverside",
+    "name": "Riverside",
+    "association": "Riverside Neighborhood Association",
+    "url": "https://www.riversideneighborhoodassociation.com/",
+    "path": "M336,400 L474,393 L468,339 L510,333 L511,318 L585,374 L638,389 L618,436 L591,424 L570,469 L547,470 L551,536 L554,584 L500,580 L420,586 L330,590 L331,550 L343,459 L336,400 Z",
+    "label_x": 455.29,
+    "label_y": 476.28,
+    "label_lines": [
+      "Riverside"
+    ],
+    "label_width": 142,
+    "label_height": 34,
+    "boundary_note": "Simplified neighborhood guide following the supplied reference. Shares its eastern edge with Locust Point, following Boyle Street then Webster Street through its southern end, continued to I-95. Blocks west of Lawrence Street and north of East Fort Avenue belong to Riverside; the shared edge follows Lawrence to Fort before returning to Boyle Street. Shared Boyle/Webster boundary is offset slightly to include both sides in Riverside."
+  },
+  {
+    "id": "locust-point",
+    "name": "Locust Point",
+    "association": "Locust Point Civic Association",
+    "url": "https://mylocustpoint.org/",
+    "path": "M638,389 L646.369,369.333 L692,388 L705,361 L746,380 L763,350 L753,328 L810,295 L814,305 L860,312 L876,276 L932,290 L954,330 L943,360 L974,396 L1008,377 L982,450 L1045,495 L1100,580 L1206,620 L1206,811 L1146,793 L1047,739 L1001,712 L942,683 L852,650 L790,631 L741,619 L717,615 L635,598 L554,584 L551,536 L547,470 L570,469 L591,424 L618,436 L638,389 Z",
+    "label_x": 776.61,
+    "label_y": 499.3,
+    "label_lines": [
+      "Locust Point"
+    ],
+    "label_width": 142,
+    "label_height": 34,
+    "boundary_note": "Simplified neighborhood guide following the supplied reference. Territory west of Webster Street through its southern end is assigned to Riverside; the shared boundary continues to I-95. Blocks west of Lawrence Street and north of East Fort Avenue belong to Riverside; the shared edge follows Lawrence to Fort before returning to Boyle Street. The northwest corner is the intersection of the extended Lawrence Street edge and the simplified coastline. Shared Boyle/Webster boundary is offset slightly to include both sides in Riverside."
+  },
+  {
+    "id": "sharp-leadenhall",
+    "name": "Sharp Leadenhall",
+    "association": "Historic Sharp Leadenhall",
+    "url": "https://www.historicsharpleadenhall.org/",
+    "path": "M149,111 L224,107 L225,130 L228,180 L232,258 L205,263 L197.5,301.5 L191.8,299.6 L155.4,286.3 L117,272.3 L122,256 L140,210 L149,160 L149,111 Z",
+    "label_x": 151.57,
+    "label_y": 204.89,
+    "label_lines": [
+      "Sharp",
+      "Leadenhall"
+    ],
+    "label_width": 126,
+    "label_height": 54,
+    "boundary_note": "Simplified neighborhood guide: north edge follows West Hill Street, south edge follows West West Street. Excludes Cal Ripken Way and South Baltimore territory east of Race Street below Cross Street."
+  }
+]

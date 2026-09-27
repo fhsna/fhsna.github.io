@@ -21,6 +21,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+markdown: kramdown
 sass:
   style: compressed
 compress_html:
@@ -34,3 +35,4 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
+  - assets/maps/south-baltimore.svg
