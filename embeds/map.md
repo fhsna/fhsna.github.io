@@ -4,7 +4,9 @@ layout: embed
 permalink: /embeds/map/
 ---
 
+<div class="neighborhood-map-scroll" tabindex="0" aria-label="South Baltimore neighborhood map; scroll horizontally on small screens">
 {% include neighborhood-map.html %}
+</div>
 
 ## Neighborhood associations
 
