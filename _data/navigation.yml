@@ -1,0 +1,23 @@
+- title: Home
+  url: /
+- title: FHSNA Store
+  url: https://squareup.com/store/FHSNA
+- title: About FHSNA
+  url: /about-fhsna/
+- title: City Resources
+  url: /city-resources/
+- title: For Families
+  url: /for-families/
+- title: Area 19 Parking Passes
+  url: /area-19-parking-passes/
+- title: Contact
+  url: /contact/
+- title: Meeting Notes
+  url: /meeting-notes/
+- title: Topics and Events
+  url: /topics-and-events/
+  children:
+  - title: Cafe Lights Installation Grant - Grants Awarded
+    url: /topics-and-events/cafe-lights-installation-grant-grants-awarded/
+  - title: Dusk to Dawn Light Bulbs
+    url: /topics-and-events/dusk-to-dawn-light-bulbs/

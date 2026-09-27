@@ -1,0 +1,35 @@
+title: Federal Hill South Neighborhood Association
+description: Community news and resources for Federal Hill South, Baltimore.
+url: https://www.federalhillsouth.org
+baseurl: ""
+favicon: "/assets/images/favicon.svg"
+permalink: /:title/
+
+collections:
+  meetings:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      seo:
+        type: "Organization"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+compress_html:
+  comments: ["<!-- ", " -->"]
+  clippings: all
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CNAME

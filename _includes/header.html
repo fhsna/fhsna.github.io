@@ -1,0 +1,6 @@
+<header class="page-header">
+  {% if page.header_image and page.header_image != empty %}
+  <img class="page-header-image" src="{{ page.header_image | relative_url | escape }}" alt="" aria-hidden="true">
+  {% endif %}
+  <h1>{{ page.title | escape }}</h1>
+</header>

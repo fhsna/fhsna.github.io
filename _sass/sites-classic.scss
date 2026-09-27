@@ -1,0 +1,444 @@
+// Theme tokens ---------------------------------------------------------------
+// Defaults reproduce the exported Google Sites Light theme. Override any token
+// with `@use "sites-classic" with (...)` in assets/styles.scss.
+$primary-color: #1e6373 !default;
+$text-color: #212121 !default;
+$background-color: #fff !default;
+// Reserved theme color for future muted content sections. No current selector
+// uses it; retained from the export for optional secondary backgrounds.
+$muted-background: #ededed !default;
+$border-color: #ccc !default;
+$black: #000 !default;
+$transparent-color: transparent !default;
+
+// Role colors inherit palette defaults so changing the theme stays consistent.
+$navigation-color: rgba($black, .64) !default;
+$navigation-active-color: rgba($black, .8) !default;
+$control-color: $navigation-color !default;
+$overlay-color: rgba($text-color, .45) !default;
+$focus-color: $primary-color !default;
+$header-background: $primary-color !default;
+$header-text-color: $background-color !default;
+$header-image-shade-color: $text-color !default;
+$header-image-shade-opacity: .6 !default;
+$footer-background: $primary-color !default;
+$footer-text-color: $background-color !default;
+$footer-link-color: $footer-text-color !default;
+
+// Typography: font families, weights, and sizes are independently configurable.
+$body-font: Lato, sans-serif !default;
+$heading-font: $body-font !default;
+$navigation-font: $body-font !default;
+$footer-font: $body-font !default;
+$light-weight: 300 !default;
+$normal-weight: 400 !default;
+$bold-weight: 700 !default;
+$body-font-size: 11pt !default;
+$home-introduction-font-size: 14pt !default;
+$navigation-font-size: 12pt !default;
+$brand-font-size: 15pt !default;
+$footer-font-size: $body-font-size !default;
+$heading-one-size: 34pt !default;
+$heading-two-size: 19pt !default;
+$heading-three-size: 15pt !default;
+$heading-one-tablet-size: 29pt !default;
+$heading-two-tablet-size: 17pt !default;
+$heading-three-tablet-size: 14pt !default;
+$heading-one-mobile-size: 24pt !default;
+$heading-two-mobile-size: 15pt !default;
+$heading-three-mobile-size: 13pt !default;
+$page-title-size: 64pt !default;
+$page-title-tablet-size: 53pt !default;
+$page-title-mobile-size: 40pt !default;
+
+// Layout dimensions follow the original sidebar and section breakpoints.
+$sidebar-width: 250px !default;
+$content-width: 1280px !default;
+$page-title-width: 800px !default;
+$mobile-breakpoint: 1279px !default;
+$stacked-columns-breakpoint: 767px !default;
+$phone-breakpoint: 479px !default;
+$toolbar-height: 64px !default;
+$navigation-gutter: 20px !default;
+
+// Separate logo limits from the exported sidebar and mobile toolbar styles.
+$sidebar-logo-max-height: 36px !default;
+$sidebar-logo-max-width: 100% !default;
+$toolbar-logo-max-height: 56px !default;
+$toolbar-logo-max-width: 225px !default;
+
+// Shared section inset keeps the header, Markdown body, and footer aligned.
+@mixin content-spacing {
+  padding: 2rem clamp(1rem, 4vw, 4rem);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: $background-color;
+  color: $text-color;
+  font-family: $body-font;
+  font-size: $body-font-size;
+  font-weight: $normal-weight;
+  line-height: 1.6667;
+}
+
+// Reserved for future native buttons (none currently rendered). Navigation
+// uses checkbox labels; this prevents browser fonts on buttons added later.
+button { font: inherit; }
+// strong is used by Markdown emphasis; b is retained for equivalent inline HTML.
+strong, b { font-weight: $bold-weight; }
+
+a {
+  color: $primary-color;
+  text-underline-offset: .15em;
+  &:hover { text-decoration-thickness: 2px; }
+}
+
+:focus-visible {
+  outline: 2px solid $focus-color;
+  outline-offset: 4px;
+}
+
+// Keep keyboard navigation available without Google's JavaScript controls.
+.skip-link {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 6;
+  padding: .5rem 1rem;
+  background: $background-color;
+  transform: translateY(-200%);
+  &:focus { transform: translateY(0); }
+}
+
+.site-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: $sidebar-width;
+  padding: 48.5px $navigation-gutter 2rem;
+  overflow-y: auto;
+  background: $background-color;
+
+  .site-brand {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: $brand-font-size;
+    font-weight: $light-weight;
+    line-height: 1.333;
+    text-decoration: none;
+  }
+
+  // Target only the logo SVG, leaving disclosure and hamburger icons untouched.
+  .site-brand .fhsna-logo {
+    display: block;
+    max-height: $sidebar-logo-max-height;
+    max-width: $sidebar-logo-max-width;
+    width: auto;
+    height: auto;
+  }
+
+  ul { margin: 0; padding: 0; list-style: none; }
+  // Every link has the same text inset; disclosure arrows occupy its gutter.
+  nav { font-family: $navigation-font; font-size: $navigation-font-size; }
+  ul ul { padding-left: $navigation-gutter; }
+  nav a {
+    display: block;
+    padding: 11.5px 0 11.5px $navigation-gutter;
+    color: $navigation-color;
+    font-weight: $light-weight;
+    line-height: 1.21;
+    text-decoration: none;
+    &:hover, &[aria-current="page"] { color: $navigation-active-color; }
+    &[aria-current="page"] { font-weight: $bold-weight; }
+  }
+}
+
+// A full-height column lets content grow and pushes the footer to the viewport edge.
+// The footer remains in normal document flow on longer pages.
+.site-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-left: $sidebar-width;
+}
+
+// Isolate the optional cover image behind the centered title without letting
+// it affect header height or overlap another section.
+.page-header {
+  @include content-spacing;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: $header-background;
+  color: $header-text-color;
+
+  h1 {
+    max-width: $page-title-width;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font-family: $heading-font;
+    font-size: $page-title-size;
+    font-weight: $light-weight;
+    line-height: 1;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+  }
+}
+
+// Darken the image with the configured overlay: blend it over the shade
+// color. An img cannot host ::before, so opacity applies directly to the image.
+// Keep this background conditional so headers without images retain the theme.
+.page-header:has(.page-header-image) { background: $header-image-shade-color; }
+.page-header-image {
+  opacity: 1 - $header-image-shade-opacity;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+// Style Markdown's native elements instead of Google's generated text classes.
+.page-content {
+  @include content-spacing;
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1 0 auto;
+  overflow-wrap: anywhere;
+
+  // h4–h6 are not currently used. Keep all six native heading levels styled
+  // so future Markdown subheadings inherit the theme and anchor spacing.
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    font-weight: $normal-weight;
+    scroll-margin-top: 1rem;
+  }
+  h1 { color: $primary-color; font-size: $heading-one-size; font-weight: $light-weight; line-height: 1.2; letter-spacing: .5px; }
+  h2 { color: $primary-color; font-size: $heading-two-size; line-height: 1.4; margin-top: 1.5rem; }
+  h3 { font-size: $heading-three-size; line-height: 1.25; }
+  p { margin: .75rem 0; }
+  // Numbered lists (ol) are not used yet; share the existing bullet-list inset.
+  ul, ol { padding-left: 1.5rem; }
+  li > p { margin: .25rem 0; }
+  img { display: block; max-width: 100%; height: auto; margin: 1rem 0; }
+  hr { border: 0; border-top: 1px solid $border-color; margin: 2.5rem 0; }
+  // Reserved for Markdown quotes (> text); none appear in the current pages.
+  blockquote { margin-left: 0; padding-left: 1rem; border-left: 3px solid $primary-color; }
+  // Reserved for Markdown tables: scroll wide tables inside the content area
+  // and give header/data cells readable padding and borders. Not yet used.
+  table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+  th, td { padding: .5rem; border: 1px solid $border-color; text-align: left; }
+}
+
+// Home introduction retains the export's larger paragraph text.
+.home-introduction p { font-size: $home-introduction-font-size; }
+
+// Human-readable equivalents of the export's equal-width section columns.
+// Keep the image first in source order so it stacks above the meeting details.
+.content-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.content-column {
+  min-width: 0;
+  > :first-child { margin-top: 0; }
+}
+
+// Footer: the exported two half-width columns share one centered section row.
+// Named column classes replace the generated Google Sites grid classes.
+.site-footer {
+  background: $footer-background;
+  color: $footer-text-color;
+  font-family: $footer-font;
+  font-size: $footer-font-size;
+  p { margin: 0; }
+  a { color: $footer-link-color; }
+  :focus-visible { outline-color: $footer-text-color; }
+}
+.footer-columns {
+  // Apply padding inside the same width limit as .page-content.
+  @include content-spacing;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 2rem;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+.footer-column { min-width: 0; overflow-wrap: anywhere; }
+.footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+// Reserved HTML hidden-attribute safeguard. No current element uses hidden;
+// future elements with this attribute must stay hidden despite display rules.
+[hidden] { display: none !important; }
+// Navigation controls retain separate targets for category links and disclosure.
+// Keep native checkbox semantics and Space-key operation, hiding only the
+// visual control. Its label receives a visible keyboard focus indicator.
+.navigation-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.mobile-toolbar, .menu-checkbox { display: none; }
+.category-checkbox:focus-visible + .category-toggle,
+.menu-checkbox:focus-visible ~ .mobile-toolbar .menu-toggle {
+  outline: 2px solid $focus-color;
+  outline-offset: 4px;
+}
+// Direct-child selectors isolate each disclosure, even in deeply nested menus.
+.navigation-item > .navigation-children { display: none; }
+.category-checkbox:checked ~ .navigation-children { display: block; }
+.category-checkbox:checked + .category-toggle svg { transform: none; }
+.menu-toggle, .category-toggle {
+  border: 0;
+  background: $transparent-color;
+  color: $control-color;
+  cursor: pointer;
+  padding: .5rem;
+  flex-shrink: 0;
+  svg { display: block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; }
+}
+// Three independent strokes morph into an X around the icon's center.
+// The native checkbox state drives the animation without JavaScript.
+.menu-toggle {
+  path { transform-origin: 12px 12px; transition: transform .2s ease, opacity .2s ease; }
+  .menu-checkbox:checked ~ .mobile-toolbar & {
+    .menu-icon-top { transform: rotate(45deg) translateY(6px); }
+    .menu-icon-middle { opacity: 0; }
+    .menu-icon-bottom { transform: rotate(-45deg) translateY(-6px); }
+  }
+}
+.navigation-item { position: relative; }
+.category-toggle {
+  position: absolute;
+  top: 3px;
+  left: -10px;
+  padding: 0;
+  width: 28px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  svg { transform: rotate(-90deg); }
+}
+.menu-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  border: 0;
+  background: $overlay-color;
+}
+
+// Google Sites switches its fixed sidebar to an overlay drawer below 1280px.
+@media (max-width: $mobile-breakpoint) {
+  .menu-checkbox { display: block; }
+  .mobile-toolbar {
+    // Keep the toggle in its original toolbar position, above the open drawer.
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    height: $toolbar-height;
+    padding: .5rem 1rem;
+    background: $background-color;
+    a { display: flex; align-items: center; min-width: 0; height: 100%; }
+    .fhsna-logo {
+      display: block;
+      max-height: $toolbar-logo-max-height;
+      max-width: min(100%, #{$toolbar-logo-max-width});
+      width: auto;
+      height: auto;
+      padding: 8px 4px 8px 12px;
+      object-fit: contain;
+      vertical-align: middle;
+    }
+  }
+  .site-sidebar {
+    // Branding belongs in the toolbar while the sidebar is a mobile drawer.
+    .site-brand { display: none; }
+    padding-top: calc(#{$toolbar-height} + 1rem);
+    z-index: 4;
+    max-width: 85vw;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform .2s ease, visibility .2s;
+  }
+  .menu-checkbox:checked ~ .site-sidebar { visibility: visible; transform: translateX(0); }
+  .menu-checkbox:checked ~ .menu-backdrop { display: block; }
+  body:has(> .menu-checkbox:checked) { overflow: hidden; }
+  .site-body {
+    margin-left: 0;
+    min-height: calc(100vh - #{$toolbar-height});
+    min-height: calc(100dvh - #{$toolbar-height});
+  }
+}
+
+// Content and footer columns reflow below tablet width, independently of the
+// wider navigation breakpoint. Typography follows the export's phone sizes.
+@media (max-width: $stacked-columns-breakpoint) {
+  .footer-columns, .content-columns { grid-template-columns: minmax(0, 1fr); }
+  .page-header {
+    min-height: 280px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h1 { font-size: $page-title-tablet-size; }
+  }
+  .page-content {
+    h1 { font-size: $heading-one-tablet-size; }
+    h2 { font-size: $heading-two-tablet-size; }
+    h3 { font-size: $heading-three-tablet-size; }
+  }
+}
+@media (max-width: $phone-breakpoint) {
+  .page-header {
+    min-height: 250px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h1 { font-size: $page-title-mobile-size; }
+  }
+  .page-content {
+    h1 { font-size: $heading-one-mobile-size; }
+    h2 { font-size: $heading-two-mobile-size; }
+    h3 { font-size: $heading-three-mobile-size; }
+  }
+}
+
+// Print removes navigation chrome; reduced motion disables drawer animation.
+@media print {
+  .site-sidebar, .skip-link, .mobile-toolbar, .menu-checkbox, .menu-backdrop { display: none !important; }
+  .site-body { margin: 0; min-height: 0; }
+  .page-header { background: $background-color; color: $primary-color; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-sidebar, .menu-toggle path { transition: none; }
+}

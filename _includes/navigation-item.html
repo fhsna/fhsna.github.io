@@ -1,0 +1,22 @@
+{% comment %}
+Render any depth of children. Index paths give each checkbox a unique ID even
+when labels or URLs repeat. Render descendants first to open active ancestors.
+{% endcomment %}
+{% capture child_navigation %}
+  {% for child in include.item.children %}
+    {% assign child_path = include.path | append: '-' | append: forloop.index %}
+    {% include navigation-item.html item=child path=child_path %}
+  {% endfor %}
+{% endcapture %}
+<li class="navigation-item">
+  {% if include.item.children.size > 0 %}
+  <input class="navigation-checkbox category-checkbox" type="checkbox" id="{{ include.path }}-state" aria-label="Show {{ include.item.title | escape }} subpages" aria-controls="{{ include.path }}-children"{% if child_navigation contains 'aria-current="page"' %} checked{% endif %}>
+  <label class="category-toggle" for="{{ include.path }}-state" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </label>
+  {% endif %}
+  <a href="{{ include.item.url | relative_url }}"{% if page.url == include.item.url %} aria-current="page"{% endif %}>{{ include.item.title | escape }}</a>
+  {% if include.item.children.size > 0 %}
+  <ul class="navigation-children" id="{{ include.path }}-children">{{ child_navigation }}</ul>
+  {% endif %}
+</li>

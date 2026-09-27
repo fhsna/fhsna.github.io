@@ -1,0 +1,27 @@
+// Font Awesome Free is loaded from cdnjs in _layouts/base.liquid.
+// Keep only site-specific icon styling here.
+@use "sites-classic" as theme;
+
+// Match the original dark social glyphs on light square backgrounds.
+$social-icon-color: theme.$text-color !default;
+$social-icon-background: theme.$background-color !default;
+$social-icon-size: 24px !default;
+$social-link-size: 40px !default;
+
+// The existing footer-social-links rule supplies centering, spacing and wrapping.
+.site-footer .footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 $social-link-size;
+  width: $social-link-size;
+  height: $social-link-size;
+  color: $social-icon-color;
+  background: $social-icon-background;
+  border-radius: 12.5%;
+  font-size: $social-icon-size;
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover { opacity: .8; }
+}

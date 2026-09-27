@@ -1,0 +1,23 @@
+<input class="navigation-checkbox menu-checkbox" type="checkbox" id="menu-state" aria-label="Show navigation" aria-controls="site-navigation">
+<div class="mobile-toolbar">
+  <label class="menu-toggle" for="menu-state" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="menu-icon-top" d="M3 6h18"/>
+      <path class="menu-icon-middle" d="M3 12h18"/>
+      <path class="menu-icon-bottom" d="M3 18h18"/>
+    </svg>
+  </label>
+  <a href="{{ '/' | relative_url }}">{% include fhsna-logo.html %}</a>
+</div>
+<label class="menu-backdrop" for="menu-state" aria-hidden="true"></label>
+<aside class="site-sidebar" id="site-navigation" aria-label="Site navigation">
+  <a class="site-brand" href="{{ '/' | relative_url }}">{% include fhsna-logo.html %}</a>
+  <nav aria-label="Main navigation">
+    <ul>
+      {% for item in site.data.navigation %}
+        {% assign navigation_path = forloop.index | prepend: 'navigation-' %}
+        {% include navigation-item.html item=item path=navigation_path %}
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
