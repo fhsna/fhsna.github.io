@@ -13,3 +13,7 @@ permalink: /embeds/map/
 {% for neighborhood in site.data.neighborhoods %}
 - [{{ neighborhood.name }} — {{ neighborhood.association }}]({{ neighborhood.url }}){:target="_blank"}
 {% endfor %}
+
+---
+
+Map data © OpenStreetMap contributors. [License](https://www.openstreetmap.org/copyright)

@@ -1,7 +1,7 @@
-<svg width="936" height="724" preserveAspectRatio="none" class="neighborhood-map" xmlns="http://www.w3.org/2000/svg" viewBox="46.1671875 23.548972189 881.8875 681.978234583" role="group" aria-labelledby="neighborhood-map-title neighborhood-map-description">
+<svg width="936" height="811" preserveAspectRatio="none" class="neighborhood-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 882 764" role="group" aria-labelledby="neighborhood-map-title neighborhood-map-description">
   <title id="neighborhood-map-title">South Baltimore neighborhood associations</title>
-  <desc id="neighborhood-map-description">Select one of six outlined neighborhoods to visit its community association website.</desc>
-  <image href="{{ '/assets/maps/south-baltimore.jpg' | relative_url }}" x="46.1671875" y="23.548972189" width="881.8875" height="681.978234583" preserveAspectRatio="none" aria-hidden="true"/>
+  <desc id="neighborhood-map-description">Select one of seven outlined neighborhoods to visit its community association website.</desc>
+  <image href="{{ '/assets/maps/south-baltimore.jpg' | relative_url }}" x="0" y="0" width="882" height="764" preserveAspectRatio="none" aria-hidden="true"/>
   {% assign south_region = site.data.neighborhoods | where: 'id', 'federal-hill-south' %}
   {% assign map_regions = site.data.neighborhoods | where_exp: 'region', 'region.id != "federal-hill-south"' | concat: south_region %}
   {% for neighborhood in map_regions %}
