@@ -51,7 +51,7 @@
     "name": "Riverside",
     "association": "Riverside Neighborhood Association",
     "url": "https://www.riversideneighborhoodassociation.com/",
-    "path": "M336,400 L474,393 L468,339 L510,333 L511,318 L585,374 L638,389 L618,436 L591,424 L570,469 L547,470 L551,536 L554,584 L500,580 L420,586 L330,590 L331,550 L343,459 L336,400 Z",
+    "path": "M336.000000000,400.000000000 L474.000000000,393.000000000 L468.000000000,339.000000000 L471.000000000,307.000000000 L466.000000000,227.000000000 L478.000000000,227.000000000 L482.000000000,275.000000000 L487.000000000,291.000000000 L505.000000000,310.000000000 L585.000000000,374.000000000 L638.000000000,389.000000000 L618.000000000,436.000000000 L632.400000000,442.400000000 L625.800000000,458.200000000 L608.059718182,496.945264868 L591.900000000,497.700000000 L548.800000000,499.100000000 L551.000000000,536.000000000 L554.000000000,584.000000000 L500.000000000,580.000000000 L420.000000000,586.000000000 L330.000000000,590.000000000 L331.000000000,550.000000000 L343.000000000,459.000000000 L336.000000000,400.000000000 Z",
     "label_x": 455.29,
     "label_y": 476.28,
     "label_lines": [
@@ -59,14 +59,14 @@
     ],
     "label_width": 142,
     "label_height": 34,
-    "boundary_note": "Simplified neighborhood guide following the supplied reference. Shares its eastern edge with Locust Point, following Boyle Street then Webster Street through its southern end, continued to I-95. Blocks west of Lawrence Street and north of East Fort Avenue belong to Riverside; the shared edge follows Lawrence to Fort before returning to Boyle Street. Shared Boyle/Webster boundary is offset slightly to include both sides in Riverside."
+    "boundary_note": "Simplified neighborhood guide. Includes the strip east of Federal Hill South to Key Highway and the mall north of Clemm Street, bounded east by the access road to East Fort Avenue. Shared corner at 39.2699664, -76.6018154. Southern boundary remains I-95."
   },
   {
     "id": "locust-point",
     "name": "Locust Point",
     "association": "Locust Point Civic Association",
     "url": "https://mylocustpoint.org/",
-    "path": "M638,389 L646.369,369.333 L692,388 L705,361 L746,380 L763,350 L753,328 L810,295 L814,305 L860,312 L876,276 L932,290 L954,330 L943,360 L974,396 L1008,377 L982,450 L1045,495 L1100,580 L1206,620 L1206,811 L1146,793 L1047,739 L1001,712 L942,683 L852,650 L790,631 L741,619 L717,615 L635,598 L554,584 L551,536 L547,470 L570,469 L591,424 L618,436 L638,389 Z",
+    "path": "M638.000000000,389.000000000 L646.369000000,369.333000000 L692.000000000,388.000000000 L705.000000000,361.000000000 L746.000000000,380.000000000 L763.000000000,350.000000000 L753.000000000,328.000000000 L810.000000000,295.000000000 L814.000000000,305.000000000 L860.000000000,312.000000000 L876.000000000,276.000000000 L932.000000000,290.000000000 L954.000000000,330.000000000 L943.000000000,360.000000000 L974.000000000,396.000000000 L1008.000000000,377.000000000 L982.000000000,450.000000000 L1045.000000000,495.000000000 L1100.000000000,580.000000000 L1206.000000000,620.000000000 L1206.000000000,811.000000000 L1146.000000000,793.000000000 L1047.000000000,739.000000000 L1001.000000000,712.000000000 L942.000000000,683.000000000 L852.000000000,650.000000000 L790.000000000,631.000000000 L741.000000000,619.000000000 L717.000000000,615.000000000 L635.000000000,598.000000000 L554.000000000,584.000000000 L551.000000000,536.000000000 L548.800000000,499.100000000 L591.900000000,497.700000000 L608.059718182,496.945264868 L625.800000000,458.200000000 L632.400000000,442.400000000 L618.000000000,436.000000000 L638.000000000,389.000000000 Z",
     "label_x": 776.61,
     "label_y": 499.3,
     "label_lines": [
@@ -74,7 +74,7 @@
     ],
     "label_width": 142,
     "label_height": 34,
-    "boundary_note": "Simplified neighborhood guide following the supplied reference. Territory west of Webster Street through its southern end is assigned to Riverside; the shared boundary continues to I-95. Blocks west of Lawrence Street and north of East Fort Avenue belong to Riverside; the shared edge follows Lawrence to Fort before returning to Boyle Street. The northwest corner is the intersection of the extended Lawrence Street edge and the simplified coastline. Shared Boyle/Webster boundary is offset slightly to include both sides in Riverside."
+    "boundary_note": "Simplified neighborhood guide. The mall north of Clemm Street and west of the access road to East Fort Avenue is assigned to Riverside. Shared corner at 39.2699664, -76.6018154. Southern boundary follows I-95."
   },
   {
     "id": "sharp-leadenhall",
