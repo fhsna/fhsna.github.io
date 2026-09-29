@@ -16,4 +16,4 @@ permalink: /embeds/map/
 
 ---
 
-Map data © OpenStreetMap contributors. [License](https://www.openstreetmap.org/copyright)
+Map data © OpenStreetMap contributors. [License](https://www.openstreetmap.org/copyright){:target="_blank"}
