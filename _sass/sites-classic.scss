@@ -59,7 +59,7 @@ $page-title-width: 800px !default;
 $mobile-breakpoint: 1279px !default;
 $stacked-columns-breakpoint: 767px !default;
 $phone-breakpoint: 479px !default;
-$toolbar-height: 64px !default;
+$toolbar-height: 56px !default;
 $navigation-gutter: 20px !default;
 
 // Separate logo limits from the exported sidebar and mobile toolbar styles.
@@ -536,7 +536,8 @@ a {
 
   .mobile-toolbar {
     // Keep the toggle in its original toolbar position, above the open drawer.
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 5;
     display: flex;
@@ -578,6 +579,11 @@ a {
     visibility .2s;
   }
 
+  .page-header {
+    padding-top: 60px + $toolbar-height;
+    padding-bottom: 60px;
+  }
+
   .menu-checkbox:checked~.site-sidebar {
     visibility: visible;
     transform: translateX(0);
@@ -614,7 +620,7 @@ a {
 
   .page-header {
     min-height: 280px;
-    padding-top: 40px;
+    padding-top: 40px + $toolbar-height;
     padding-bottom: 40px;
 
     h1 {
@@ -640,7 +646,7 @@ a {
 @media (max-width: $phone-breakpoint) {
   .page-header {
     min-height: 250px;
-    padding-top: 30px;
+    padding-top: 30px + $toolbar-height;
     padding-bottom: 30px;
 
     h1 {
