@@ -73,7 +73,9 @@ $toolbar-logo-max-width: 225px !default;
   padding: 2rem clamp(1rem, 4vw, 4rem);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -87,14 +89,23 @@ body {
 
 // Reserved for future native buttons (none currently rendered). Navigation
 // uses checkbox labels; this prevents browser fonts on buttons added later.
-button { font: inherit; }
+button {
+  font: inherit;
+}
+
 // strong is used by Markdown emphasis; b is retained for equivalent inline HTML.
-strong, b { font-weight: $bold-weight; }
+strong,
+b {
+  font-weight: $bold-weight;
+}
 
 a {
   color: $primary-color;
   text-underline-offset: .15em;
-  &:hover { text-decoration-thickness: 2px; }
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
 }
 
 :focus-visible {
@@ -111,7 +122,10 @@ a {
   padding: .5rem 1rem;
   background: $background-color;
   transform: translateY(-200%);
-  &:focus { transform: translateY(0); }
+
+  &:focus {
+    transform: translateY(0);
+  }
 }
 
 .site-sidebar {
@@ -140,10 +154,22 @@ a {
     height: auto;
   }
 
-  ul { margin: 0; padding: 0; list-style: none; }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
   // Every link has the same text inset; disclosure arrows occupy its gutter.
-  nav { font-family: $navigation-font; font-size: $navigation-font-size; }
-  ul ul { padding-left: $navigation-gutter; }
+  nav {
+    font-family: $navigation-font;
+    font-size: $navigation-font-size;
+  }
+
+  ul ul {
+    padding-left: $navigation-gutter;
+  }
+
   nav a {
     display: block;
     padding: 11.5px 0 11.5px $navigation-gutter;
@@ -151,8 +177,15 @@ a {
     font-weight: $light-weight;
     line-height: 1.21;
     text-decoration: none;
-    &:hover, &[aria-current="page"] { color: $navigation-active-color; }
-    &[aria-current="page"] { font-weight: $bold-weight; }
+
+    &:hover,
+    &[aria-current="page"] {
+      color: $navigation-active-color;
+    }
+
+    &[aria-current="page"] {
+      font-weight: $bold-weight;
+    }
   }
 }
 
@@ -198,7 +231,10 @@ a {
 // Darken the image with the configured overlay: blend it over the shade
 // color. An img cannot host ::before, so opacity applies directly to the image.
 // Keep this background conditional so headers without images retain the theme.
-.page-header:has(.page-header-image) { background: $header-image-shade-color; }
+.page-header:has(.page-header-image) {
+  background: $header-image-shade-color;
+}
+
 .page-header-image {
   opacity: 1 - $header-image-shade-opacity;
   position: absolute;
@@ -222,7 +258,12 @@ a {
 
   // h4–h6 are not currently used. Keep all six native heading levels styled
   // so future Markdown subheadings inherit the theme and anchor spacing.
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $heading-font;
     font-weight: $normal-weight;
     scroll-margin-top: 1rem;
@@ -232,25 +273,82 @@ a {
       padding-top: 0;
     }
   }
-  h1 { color: $primary-color; font-size: $heading-one-size; font-weight: $light-weight; line-height: 1.2; letter-spacing: .5px; }
-  h2 { color: $primary-color; font-size: $heading-two-size; line-height: 1.4; margin-top: 1.5rem; }
-  h3 { font-size: $heading-three-size; line-height: 1.25; }
-  p { margin: .75rem 0; }
+
+  h1 {
+    color: $primary-color;
+    font-size: $heading-one-size;
+    font-weight: $light-weight;
+    line-height: 1.2;
+    letter-spacing: .5px;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: $heading-two-size;
+    line-height: 1.4;
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    font-size: $heading-three-size;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: .75rem 0;
+  }
+
   // Numbered lists (ol) are not used yet; share the existing bullet-list inset.
-  ul, ol { padding-left: 1.5rem; }
-  li > p { margin: .25rem 0; }
-  img { display: block; max-width: 100%; height: auto; margin: 1rem 0; }
-  hr { border: 0; border-top: 1px solid $border-color; margin: 2.5rem 0; }
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  li>p {
+    margin: .25rem 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $border-color;
+    margin: 2.5rem 0;
+  }
+
   // Reserved for Markdown quotes (> text); none appear in the current pages.
-  blockquote { margin-left: 0; padding-left: 1rem; border-left: 3px solid $primary-color; }
+  blockquote {
+    margin-left: 0;
+    padding-left: 1rem;
+    border-left: 3px solid $primary-color;
+  }
+
   // Reserved for Markdown tables: scroll wide tables inside the content area
   // and give header/data cells readable padding and borders. Not yet used.
-  table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
-  th, td { padding: .5rem; border: 1px solid $border-color; text-align: left; }
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: .5rem;
+    border: 1px solid $border-color;
+    text-align: left;
+  }
 }
 
 // Home introduction retains the export's larger paragraph text.
-.home-introduction p { font-size: $home-introduction-font-size; }
+.home-introduction p {
+  font-size: $home-introduction-font-size;
+}
 
 // Human-readable equivalents of the export's equal-width section columns.
 // Keep the image first in source order so it stacks above the meeting details.
@@ -261,9 +359,13 @@ a {
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .content-column {
   min-width: 0;
-  > :first-child { margin-top: 0; }
+
+  > :first-child {
+    margin-top: 0;
+  }
 }
 
 // Footer: the exported two half-width columns share one centered section row.
@@ -273,10 +375,20 @@ a {
   color: $footer-text-color;
   font-family: $footer-font;
   font-size: $footer-font-size;
-  p { margin: 0; }
-  a { color: $footer-link-color; }
-  :focus-visible { outline-color: $footer-text-color; }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $footer-link-color;
+  }
+
+  :focus-visible {
+    outline-color: $footer-text-color;
+  }
 }
+
 .footer-columns {
   // Apply padding inside the same width limit as .page-content.
   @include content-spacing;
@@ -287,7 +399,12 @@ a {
   max-width: $content-width;
   margin: 0 auto;
 }
-.footer-column { min-width: 0; overflow-wrap: anywhere; }
+
+.footer-column {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .footer-social-links {
   display: flex;
   flex-wrap: wrap;
@@ -298,7 +415,10 @@ a {
 
 // Reserved HTML hidden-attribute safeguard. No current element uses hidden;
 // future elements with this attribute must stay hidden despite display rules.
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
+
 // Navigation controls retain separate targets for category links and disclosure.
 // Keep native checkbox semantics and Space-key operation, hiding only the
 // visual control. Its label receives a visible keyboard focus indicator.
@@ -313,36 +433,77 @@ a {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-.mobile-toolbar, .menu-checkbox { display: none; }
-.category-checkbox:focus-visible + .category-toggle,
-.menu-checkbox:focus-visible ~ .mobile-toolbar .menu-toggle {
+
+.mobile-toolbar,
+.menu-checkbox {
+  display: none;
+}
+
+.category-checkbox:focus-visible+.category-toggle,
+.menu-checkbox:focus-visible~.mobile-toolbar .menu-toggle {
   outline: 2px solid $focus-color;
   outline-offset: 4px;
 }
+
 // Direct-child selectors isolate each disclosure, even in deeply nested menus.
-.navigation-item > .navigation-children { display: none; }
-.category-checkbox:checked ~ .navigation-children { display: block; }
-.category-checkbox:checked + .category-toggle svg { transform: none; }
-.menu-toggle, .category-toggle {
+.navigation-item>.navigation-children {
+  display: none;
+}
+
+.category-checkbox:checked~.navigation-children {
+  display: block;
+}
+
+.category-checkbox:checked+.category-toggle svg {
+  transform: none;
+}
+
+.menu-toggle,
+.category-toggle {
   border: 0;
   background: $transparent-color;
   color: $control-color;
   cursor: pointer;
   padding: 1rem .75rem;
   flex-shrink: 0;
-  svg { display: block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+  svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
 }
+
 // Three independent strokes morph into an X around the icon's center.
 // The native checkbox state drives the animation without JavaScript.
 .menu-toggle {
-  path { transform-origin: 12px 12px; transition: transform .2s ease, opacity .2s ease; }
-  .menu-checkbox:checked ~ .mobile-toolbar & {
-    .menu-icon-top { transform: rotate(45deg) translateY(5px); }
-    .menu-icon-middle { opacity: 0; }
-    .menu-icon-bottom { transform: rotate(-45deg) translateY(-5px); }
+  path {
+    transform-origin: 12px 12px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .menu-checkbox:checked~.mobile-toolbar & {
+    .menu-icon-top {
+      transform: rotate(45deg) translateY(5px);
+    }
+
+    .menu-icon-middle {
+      opacity: 0;
+    }
+
+    .menu-icon-bottom {
+      transform: rotate(-45deg) translateY(-5px);
+    }
   }
 }
-.navigation-item { position: relative; }
+
+.navigation-item {
+  position: relative;
+}
+
 .category-toggle {
   position: absolute;
   top: 3px;
@@ -352,8 +513,12 @@ a {
   height: 36px;
   display: grid;
   place-items: center;
-  svg { transform: rotate(-90deg); }
+
+  svg {
+    transform: rotate(-90deg);
+  }
 }
+
 .menu-backdrop {
   display: none;
   position: fixed;
@@ -365,7 +530,10 @@ a {
 
 // Google Sites switches its fixed sidebar to an overlay drawer below 1280px.
 @media (max-width: $mobile-breakpoint) {
-  .menu-checkbox { display: block; }
+  .menu-checkbox {
+    display: block;
+  }
+
   .mobile-toolbar {
     // Keep the toggle in its original toolbar position, above the open drawer.
     position: sticky;
@@ -375,7 +543,14 @@ a {
     align-items: center;
     height: $toolbar-height;
     background: $background-color;
-    a { display: flex; align-items: center; min-width: 0; height: 100%; }
+
+    a {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      height: 100%;
+    }
+
     .fhsna-logo {
       display: block;
       max-height: $toolbar-logo-max-height;
@@ -386,19 +561,36 @@ a {
       object-fit: contain;
     }
   }
+
   .site-sidebar {
+
     // Branding belongs in the toolbar while the sidebar is a mobile drawer.
-    .site-brand { display: none; }
+    .site-brand {
+      display: none;
+    }
+
     padding-top: calc(#{$toolbar-height} + 1rem);
     z-index: 4;
     max-width: 85vw;
     visibility: hidden;
     transform: translateX(-100%);
-    transition: transform .2s ease, visibility .2s;
+    transition: transform .2s ease,
+    visibility .2s;
   }
-  .menu-checkbox:checked ~ .site-sidebar { visibility: visible; transform: translateX(0); }
-  .menu-checkbox:checked ~ .menu-backdrop { display: block; }
-  body:has(> .menu-checkbox:checked) { overflow: hidden; }
+
+  .menu-checkbox:checked~.site-sidebar {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .menu-checkbox:checked~.menu-backdrop {
+    display: block;
+  }
+
+  body:has(> .menu-checkbox:checked) {
+    overflow: hidden;
+  }
+
   .site-body {
     margin-left: 0;
     min-height: calc(100vh - #{$toolbar-height});
@@ -409,43 +601,94 @@ a {
 // Content and footer columns reflow below tablet width, independently of the
 // wider navigation breakpoint. Typography follows the export's phone sizes.
 @media (max-width: $stacked-columns-breakpoint) {
-  .page-content, .footer-columns {
-      max-width: $content-width-sm;
+
+  .page-content,
+  .footer-columns {
+    max-width: $content-width-sm;
   }
-  .footer-columns, .content-columns { grid-template-columns: minmax(0, 1fr); }
+
+  .footer-columns,
+  .content-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .page-header {
     min-height: 280px;
     padding-top: 40px;
     padding-bottom: 40px;
-    h1 { font-size: $page-title-tablet-size; }
+
+    h1 {
+      font-size: $page-title-tablet-size;
+    }
   }
+
   .page-content {
-    h1 { font-size: $heading-one-tablet-size; }
-    h2 { font-size: $heading-two-tablet-size; }
-    h3 { font-size: $heading-three-tablet-size; }
+    h1 {
+      font-size: $heading-one-tablet-size;
+    }
+
+    h2 {
+      font-size: $heading-two-tablet-size;
+    }
+
+    h3 {
+      font-size: $heading-three-tablet-size;
+    }
   }
 }
+
 @media (max-width: $phone-breakpoint) {
   .page-header {
     min-height: 250px;
     padding-top: 30px;
     padding-bottom: 30px;
-    h1 { font-size: $page-title-mobile-size; }
+
+    h1 {
+      font-size: $page-title-mobile-size;
+    }
   }
+
   .page-content {
-    h1 { font-size: $heading-one-mobile-size; }
-    h2 { font-size: $heading-two-mobile-size; }
-    h3 { font-size: $heading-three-mobile-size; }
+    h1 {
+      font-size: $heading-one-mobile-size;
+    }
+
+    h2 {
+      font-size: $heading-two-mobile-size;
+    }
+
+    h3 {
+      font-size: $heading-three-mobile-size;
+    }
   }
 }
 
 // Print removes navigation chrome; reduced motion disables drawer animation.
 @media print {
-  .site-sidebar, .skip-link, .mobile-toolbar, .menu-checkbox, .menu-backdrop { display: none !important; }
-  .site-body { margin: 0; min-height: 0; }
-  .page-header { background: $background-color; color: $primary-color; }
+
+  .site-sidebar,
+  .skip-link,
+  .mobile-toolbar,
+  .menu-checkbox,
+  .menu-backdrop {
+    display: none !important;
+  }
+
+  .site-body {
+    margin: 0;
+    min-height: 0;
+  }
+
+  .page-header {
+    background: $background-color;
+    color: $primary-color;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-sidebar, .menu-toggle path { transition: none; }
+
+  .site-sidebar,
+  .menu-toggle path {
+    transition: none;
+  }
 }

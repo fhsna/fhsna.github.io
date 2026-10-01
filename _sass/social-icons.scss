@@ -23,5 +23,7 @@ $social-link-size: 40px !default;
   line-height: 1;
   text-decoration: none;
 
-  &:hover { opacity: .8; }
+  &:hover {
+    opacity: .8;
+  }
 }

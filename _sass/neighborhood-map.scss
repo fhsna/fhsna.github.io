@@ -11,35 +11,63 @@ $map-label-color: theme.$text-color !default;
   border: 1px solid theme.$border-color;
   border-radius: .25rem;
 }
+
 .neighborhood-map {
   display: block;
   width: 100%;
   min-width: 680px;
   height: auto;
 }
+
 .neighborhood-region {
   cursor: pointer;
+
   .neighborhood-region-shape {
     fill: rgba($map-region-color, .17);
     stroke: $map-region-color;
     stroke-width: 2;
     vector-effect: non-scaling-stroke;
   }
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     outline: none;
+
     .neighborhood-region-shape {
       fill: rgba($map-region-color, .4);
       stroke-width: 4;
     }
-    .neighborhood-map-label rect { fill: $map-region-color; }
-    .neighborhood-map-label text { fill: $map-label-background; }
-    .neighborhood-map-label { opacity: 1; }
+
+    .neighborhood-map-label rect {
+      fill: $map-region-color;
+    }
+
+    .neighborhood-map-label text {
+      fill: $map-label-background;
+    }
+
+    .neighborhood-map-label {
+      opacity: 1;
+    }
   }
 }
+
 .neighborhood-map-label {
   // Keep the map visible beneath labels until a region is hovered or focused.
   opacity: .95;
-  rect { fill: $map-label-background; stroke: $map-region-color; stroke-width: 1; }
-  text { fill: $map-label-color; font: theme.$bold-weight 18px theme.$body-font; }
+
+  rect {
+    fill: $map-label-background;
+    stroke: $map-region-color;
+    stroke-width: 1;
+  }
+
+  text {
+    fill: $map-label-color;
+    font: theme.$bold-weight 18px theme.$body-font;
+  }
 }
-.neighborhood-map-credit { font-size: .85em; }
+
+.neighborhood-map-credit {
+  font-size: .85em;
+}
