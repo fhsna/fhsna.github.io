@@ -54,6 +54,7 @@ $page-title-mobile-size: 40pt !default;
 // Layout dimensions follow the original sidebar and section breakpoints.
 $sidebar-width: 250px !default;
 $content-width: 1280px !default;
+$content-width-sm: 544px !default;
 $page-title-width: 800px !default;
 $mobile-breakpoint: 1279px !default;
 $stacked-columns-breakpoint: 767px !default;
@@ -225,6 +226,11 @@ a {
     font-family: $heading-font;
     font-weight: $normal-weight;
     scroll-margin-top: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
   h1 { color: $primary-color; font-size: $heading-one-size; font-weight: $light-weight; line-height: 1.2; letter-spacing: .5px; }
   h2 { color: $primary-color; font-size: $heading-two-size; line-height: 1.4; margin-top: 1.5rem; }
@@ -277,7 +283,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: 2rem;
+  gap: 4rem 2rem;
   max-width: $content-width;
   margin: 0 auto;
 }
@@ -322,7 +328,7 @@ a {
   background: $transparent-color;
   color: $control-color;
   cursor: pointer;
-  padding: .5rem;
+  padding: 1rem .75rem;
   flex-shrink: 0;
   svg { display: block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; }
 }
@@ -331,9 +337,9 @@ a {
 .menu-toggle {
   path { transform-origin: 12px 12px; transition: transform .2s ease, opacity .2s ease; }
   .menu-checkbox:checked ~ .mobile-toolbar & {
-    .menu-icon-top { transform: rotate(45deg) translateY(6px); }
+    .menu-icon-top { transform: rotate(45deg) translateY(5px); }
     .menu-icon-middle { opacity: 0; }
-    .menu-icon-bottom { transform: rotate(-45deg) translateY(-6px); }
+    .menu-icon-bottom { transform: rotate(-45deg) translateY(-5px); }
   }
 }
 .navigation-item { position: relative; }
@@ -368,7 +374,6 @@ a {
     display: flex;
     align-items: center;
     height: $toolbar-height;
-    padding: .5rem 1rem;
     background: $background-color;
     a { display: flex; align-items: center; min-width: 0; height: 100%; }
     .fhsna-logo {
@@ -377,9 +382,8 @@ a {
       max-width: min(100%, #{$toolbar-logo-max-width});
       width: auto;
       height: auto;
-      padding: 8px 4px 8px 12px;
+      padding: 8px 4px 8px 0;
       object-fit: contain;
-      vertical-align: middle;
     }
   }
   .site-sidebar {
@@ -405,6 +409,9 @@ a {
 // Content and footer columns reflow below tablet width, independently of the
 // wider navigation breakpoint. Typography follows the export's phone sizes.
 @media (max-width: $stacked-columns-breakpoint) {
+  .page-content, .footer-columns {
+      max-width: $content-width-sm;
+  }
   .footer-columns, .content-columns { grid-template-columns: minmax(0, 1fr); }
   .page-header {
     min-height: 280px;

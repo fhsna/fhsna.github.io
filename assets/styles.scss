@@ -4,5 +4,8 @@
   $primary-color: #1e6373
 );
 
-@use "social-icons";
+@use "social-icons" with (
+  $social-icon-color: #000
+);
+
 @use "neighborhood-map";
