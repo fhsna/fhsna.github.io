@@ -2,9 +2,7 @@
   <title id="neighborhood-map-title">South Baltimore neighborhood associations</title>
   <desc id="neighborhood-map-description">Select one of seven outlined neighborhoods to visit its community association website.</desc>
   <image href="{{ '/assets/maps/south-baltimore.jpg' | relative_url }}" x="0" y="0" width="882" height="764" preserveAspectRatio="none" aria-hidden="true"/>
-  {% assign south_region = site.data.neighborhoods | where: 'id', 'federal-hill-south' %}
-  {% assign map_regions = site.data.neighborhoods | where_exp: 'region', 'region.id != "federal-hill-south"' | concat: south_region %}
-  {% for neighborhood in map_regions %}
+  {% for neighborhood in site.data.neighborhoods %}
   <a class="neighborhood-region" href="{{ neighborhood.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ neighborhood.name | escape }}: {{ neighborhood.association | escape }}" tabindex="0">
     <title>{{ neighborhood.association | escape }}</title>
     <path class="neighborhood-region-shape" d="{{ neighborhood.path }}"/>

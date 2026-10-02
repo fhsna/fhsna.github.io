@@ -1,20 +1,5 @@
 [
   {
-    "id": "federal-hill",
-    "name": "Federal Hill",
-    "association": "Federal Hill Neighborhood Association",
-    "url": "https://www.federalhillbaltimore.org/",
-    "path": "M179.355690,185.944094 L210.859708,184.444019 L248.000000,182.301477 L262.866341,181.443870 L411.885349,180.443821 L424.010000,180.443821 L430.220000,187.400000 L432.520000,207.920000 L433.160000,229.290000 L435.710000,285.449034 L419.886369,285.449034 L272.867617,305.450027 L185.856519,316.450573 L181.585974,238.276692 L179.355690,185.944094 Z",
-    "label_x": 285.519231,
-    "label_y": 241.976876,
-    "label_lines": [
-      "Federal Hill"
-    ],
-    "label_width": 142,
-    "label_height": 34,
-    "boundary_note": "Simplified neighborhood guide. Eastern boundary follows Key Highway and meets Riverside exactly at Cross Street; northern/western edges meet Otterbein and Sharp Leadenhall."
-  },
-  {
     "id": "federal-hill-south",
     "name": "Federal Hill South",
     "association": "Federal Hill South Neighborhood Association",
@@ -29,6 +14,21 @@
     "label_width": 126,
     "label_height": 54,
     "boundary_note": "Simplified to the supplied neighborhood reference map and requested street limits; all areas stop at the north side of I-95. Not an official service boundary."
+  },
+  {
+    "id": "federal-hill",
+    "name": "Federal Hill",
+    "association": "Federal Hill Neighborhood Association",
+    "url": "https://www.federalhillbaltimore.org/",
+    "path": "M179.355690,185.944094 L210.859708,184.444019 L248.000000,182.301477 L262.866341,181.443870 L411.885349,180.443821 L424.010000,180.443821 L430.220000,187.400000 L432.520000,207.920000 L433.160000,229.290000 L435.710000,285.449034 L419.886369,285.449034 L272.867617,305.450027 L185.856519,316.450573 L181.585974,238.276692 L179.355690,185.944094 Z",
+    "label_x": 285.519231,
+    "label_y": 241.976876,
+    "label_lines": [
+      "Federal Hill"
+    ],
+    "label_width": 142,
+    "label_height": 34,
+    "boundary_note": "Simplified neighborhood guide. Eastern boundary follows Key Highway and meets Riverside exactly at Cross Street; northern/western edges meet Otterbein and Sharp Leadenhall."
   },
   {
     "id": "south-baltimore",
