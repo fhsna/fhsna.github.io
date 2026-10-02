@@ -545,17 +545,10 @@ a {
     height: $toolbar-height;
     background: $background-color;
 
-    a {
-      display: flex;
-      align-items: center;
-      min-width: 0;
-      height: 100%;
-    }
-
     .fhsna-logo {
       display: block;
       max-height: $toolbar-logo-max-height;
-      max-width: min(100%, #{$toolbar-logo-max-width});
+      max-width: $toolbar-logo-max-width;
       width: auto;
       height: auto;
       padding: 8px 4px 8px 0;
@@ -579,8 +572,12 @@ a {
     visibility .2s;
   }
 
+  .site-body {
+    margin-top: $toolbar-height;
+  }
+
   .page-header {
-    padding-top: 60px + $toolbar-height;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
 
@@ -607,7 +604,6 @@ a {
 // Content and footer columns reflow below tablet width, independently of the
 // wider navigation breakpoint. Typography follows the export's phone sizes.
 @media (max-width: $stacked-columns-breakpoint) {
-
   .page-content,
   .footer-columns {
     max-width: $content-width-sm;
@@ -620,7 +616,7 @@ a {
 
   .page-header {
     min-height: 280px;
-    padding-top: 40px + $toolbar-height;
+    padding-top: 40px;
     padding-bottom: 40px;
 
     h1 {
@@ -646,7 +642,7 @@ a {
 @media (max-width: $phone-breakpoint) {
   .page-header {
     min-height: 250px;
-    padding-top: 30px + $toolbar-height;
+    padding-top: 30px;
     padding-bottom: 30px;
 
     h1 {
